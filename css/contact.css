@@ -34,22 +34,6 @@ section#contact .wrap ul li a.E-mail:hover{
   background-size: contain;
   background-position: center;
 }
-section#contact .wrap ul li a.Instagram{
-  font-size: 0;
-  width: 150px;
-  height: 150px;
-  display: block;
-  background-image: url(../img/instagram.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-section#contact .wrap ul li a.instagram:hover{
-  background-image: url(../img/instagram2.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
 section#contact .wrap ul li a.Github{
   font-size: 0;
   width: 150px;
@@ -62,6 +46,22 @@ section#contact .wrap ul li a.Github{
 }
 section#contact .wrap ul li a.Github:hover{
   background-image: url(../img/github2.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section#contact .wrap ul li a.Instagram{
+  font-size: 0;
+  width: 150px;
+  height: 150px;
+  display: block;
+  background-image: url(../img/instagram.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section#contact .wrap ul li a.Instagram:hover{
+  background-image: url(../img/instagram2.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
