@@ -29,10 +29,7 @@ section#contact .wrap ul li a.E-mail{
   background-position: center;
 }
 section#contact .wrap ul li a.E-mail:hover{
-  background-image: url(../img/mail2.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  transform: scale(1.1);
 }
 section#contact .wrap ul li a.Github{
   font-size: 0;
@@ -45,10 +42,7 @@ section#contact .wrap ul li a.Github{
   background-position: center;
 }
 section#contact .wrap ul li a.Github:hover{
-  background-image: url(../img/github2.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  transform: scale(1.1);
 }
 section#contact .wrap ul li a.Instagram{
   font-size: 0;
@@ -61,8 +55,5 @@ section#contact .wrap ul li a.Instagram{
   background-position: center;
 }
 section#contact .wrap ul li a.Instagram:hover{
-  background-image: url(../img/instagram2.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  transform: scale(1.1);
 }
