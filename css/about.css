@@ -1,0 +1,123 @@
+section#about {
+  background-color: white;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 900px;
+}
+section#about .wrap {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+section#about .wrap h2 {
+  grid-column: 1 /span 6;
+  text-align: center;
+}
+section#about .wrap img {
+  height: 300px;
+  grid-row: 2;
+  grid-column: 1;
+}
+section#about .wrap p {
+  margin-bottom: 10px;
+  grid-row: 3;
+}
+section#about .wrap > p {
+  font-size: 19px;
+}
+section#about .wrap span {
+  line-height: 1.5;
+}
+section#about .wrap ul {
+  gap: 40px;
+  grid-row: 2/ span 3;
+  grid-column: 2;
+  margin-top: 30px;
+}
+section#about .wrap ul li{
+  text-align: center;
+}
+section#about .wrap ul li:not(:first-child) {
+  height: 400px;
+  margin-left: 30px;
+}
+
+section#about .wrap ul li::before{
+  content: "";
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-bottom: 10px;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section#about .wrap ul li:nth-child(1)::before{
+  background-image: url(../icon/html.png);
+}
+section#about .wrap ul li:nth-child(2)::before{
+  background-image: url(../icon/css.png);
+}
+section#about .wrap ul li:nth-child(3)::before{
+  background-image: url(../icon/jquery.png);
+}
+section#about .wrap ul li:nth-child(4)::before{
+  background-image: url(../icon/js.png);
+}
+section#about .wrap ul li:nth-child(5)::before{
+  background-image: url(../icon/zzc.png);
+}
+section#about .wrap ul li:nth-child(6)::before{
+  background-image: url(../icon/sass.png);
+}
+section#about .wrap ul li:nth-child(7)::before{
+  background-image: url(../icon/w3c.png);
+}
+section#about .wrap ul li:nth-child(8)::before{
+  background-image: url(../icon/webj.png);
+}
+section#about .wrap .education{
+  grid-row: 3;
+  grid-column: 3;
+}
+section#about .wrap .education h2{
+  text-align: left;
+  margin-bottom: 20px;
+}
+section#about .wrap .education p{
+  
+}
+section#about .wrap .certificate{
+  grid-row: 3;
+  grid-column: 5;
+}
+section#about .wrap .certificate h2{
+  text-align: left;
+  margin-bottom: 20px;
+}
+section#about .wrap .certificate p{
+  
+}
+
+section#about::after{
+  content: "";
+  width: 95%;
+  height: 45%;
+  display: block;
+  background-color: #e9e7e7;
+  border-radius: 30px 0 0 30px;
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+

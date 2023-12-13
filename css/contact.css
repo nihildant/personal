@@ -1,0 +1,68 @@
+section#contact{
+  height: 100%;
+}
+section#contact .wrap{
+   
+}
+section#contact .wrap h2{
+  text-align: center;
+}
+section#contact .wrap ul{
+  gap: 60px;
+  justify-content: center;
+  margin-top: 5%;
+}
+section#contact .wrap ul li{
+   
+}
+section#contact .wrap ul li a{
+   
+}
+section#contact .wrap ul li a.E-mail{
+  font-size: 0;
+  width: 150px;
+  height: 150px;
+  display: block;
+  background-image: url(../img/mail.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section#contact .wrap ul li a.E-mail:hover{
+  background-image: url(../img/mail2.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section#contact .wrap ul li a.Instagram{
+  font-size: 0;
+  width: 150px;
+  height: 150px;
+  display: block;
+  background-image: url(../img/instagram.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section#contact .wrap ul li a.instagram:hover{
+  background-image: url(../img/instagram2.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section#contact .wrap ul li a.Github{
+  font-size: 0;
+  width: 150px;
+  height: 150px;
+  display: block;
+  background-image: url(../img/github.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section#contact .wrap ul li a.Github:hover{
+  background-image: url(../img/github2.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
