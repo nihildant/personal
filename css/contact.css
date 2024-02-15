@@ -1,8 +1,10 @@
 section#contact{
-  height: 100%;
+  height: calc(100vh - 266px);
 }
 section#contact .wrap{
    
+  height: 100%;
+  margin-top: 100px;
 }
 section#contact .wrap h2{
   text-align: center;
@@ -11,6 +13,7 @@ section#contact .wrap ul{
   gap: 60px;
   justify-content: center;
   margin-top: 5%;
+  align-items: center;
 }
 section#contact .wrap ul li{
    
@@ -27,6 +30,7 @@ section#contact .wrap ul li a.E-mail{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: 0.5s;
 }
 section#contact .wrap ul li a.E-mail:hover{
   transform: scale(1.1);
@@ -40,6 +44,7 @@ section#contact .wrap ul li a.Github{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: 0.5s;
 }
 section#contact .wrap ul li a.Github:hover{
   transform: scale(1.1);
@@ -53,6 +58,7 @@ section#contact .wrap ul li a.Instagram{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: 0.5s;
 }
 section#contact .wrap ul li a.Instagram:hover{
   transform: scale(1.1);

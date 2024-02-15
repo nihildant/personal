@@ -5,6 +5,21 @@ section#portfolio {
   height: 100vh;
   box-sizing: border-box;
   min-height: 800px;
+  position: relative;
+}
+section#portfolio::after{
+  content: "";
+  display: block;
+  border: 50px solid rgb(255, 255, 255);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-width: 800px;
+  border-right-width: 800px;
+  position: absolute;
+  bottom: -95px;
+  border-top-width: 50px;
+  left: 50px;
 }
 section#portfolio .wrap {
 }
