@@ -45,15 +45,7 @@
 - Nostalgia https://nihildant.github.io/ph5/
 
 ## 스크린샷 또는 데모(포트폴리오 웹사이트의 스크린샷을 추가)
-![pf1](https://github.com/nihildant/personal/assets/150096413/ad638133-a376-4cb0-91d3-7d23c078a1ed)
-![pf2](https://github.com/nihildant/personal/assets/150096413/ca7ac30b-2111-4ba8-859e-bd37b7c02fea)
-![pf3](https://github.com/nihildant/personal/assets/150096413/62611a6a-2ab7-4e61-aad4-eea7d95b3683)
-![pf4](https://github.com/nihildant/personal/assets/150096413/32a8b77f-e0d9-4b56-816f-8a4c53a198ac)
-![pf3-re](https://github.com/nihildant/personal/assets/150096413/ef67ca56-0dc7-4027-80c2-3a09a4248411)
-![pf5](https://github.com/nihildant/personal/assets/150096413/f7bc4c17-adf6-4a4b-9f9f-f3a0e4962f3f)
-
-
-
+![pf1-5](https://github.com/nihildant/personal/assets/150096413/9435eb60-8a77-4829-9946-656a0b116d10)
 
 ## 작성자 정보
 (이메일 주소나 연락처 정보를 추가)
