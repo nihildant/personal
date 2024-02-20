@@ -88,6 +88,30 @@ section#portfolio .wrap ul li:nth-child(3) a::after{
   box-sizing: border-box;
   order: 2;
 }
+section#portfolio .wrap ul li:nth-child(4) a::after{
+  content: "";
+  background-image: url(../img/hbPaper.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  box-sizing: border-box;
+  order: 2;
+}
+section#portfolio .wrap ul li:nth-child(5) a::after{
+  content: "";
+  background-image: url(../img/hitejinro.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  box-sizing: border-box;
+  order: 2;
+}
 section#portfolio .wrap ul li a h3 {
   width: 100%;
   padding-bottom: 20px;

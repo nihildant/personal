@@ -21,7 +21,8 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $("a.ham").click(function(){
-                $(".ham").toggleClass("x");
+                $(this).toggleClass("x");
+                $("header div.wrap ul.gnb").toggleClass("sideM");
                 return false;
             });
             }
@@ -77,10 +78,6 @@
                 <li><a href="">CONTACT</a></li>
             </ul>
             <div class="right flex">
-                <ul class="lang flex">
-                    <li><a href="">ENGLISH</a></li>
-                    <li><a href="">한국어</a></li>
-                </ul>
                 <a href="" class="ham">
                     <span></span>
                     <span></span>
@@ -165,6 +162,29 @@
                     <li>
                         <a href="" class="block borderR30">
                             <h3 class="h4">Nostalgia</h3>
+                            <ul class="tag flex">
+                                <li>#HTML5</li>
+                                <li>#CSS3</li>
+                                <li>#제작100%</li>
+                                <li>#시각적클론코딩</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block borderR30">
+                            <h3 class="h4">HBpaper</h3>
+                            <ul class="tag flex">
+                                <li>#HTML5</li>
+                                <li>#CSS3</li>
+                                <li>#제작100%</li>
+                                <li>#시각적클론코딩</li>
+                            </ul>
+                            <a href="">리뉴얼</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="block borderR30">
+                            <h3 class="h4">HITEjinro</h3>
                             <ul class="tag flex">
                                 <li>#HTML5</li>
                                 <li>#CSS3</li>
