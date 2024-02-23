@@ -2,10 +2,10 @@ header {
   position: absolute;
   width: 100%;
   z-index: 1;
+  height: 100%;
 }
 header div.wrap {
   
-  /*! align-items: center; */
 }
 header div.wrap h1 {
   
@@ -43,14 +43,12 @@ header div.wrap div.right ul.lang li {
   
 }
 header div.wrap div.right ul.lang li a {
-  
   padding: 10px 5px;
 }
 header div.wrap div.right ul.lang li:nth-child(1) {
   
 }
 header div.wrap div.right ul.lang li:nth-child(1) a {
-  
   color: #a29f9f;
 }
 header div.wrap div.right > a.ham {
@@ -89,11 +87,11 @@ header div.wrap div.right > a.ham {
   opacity: 0;
 }
 .sideM{
-  position: absolute;
-  right: 150px;
   flex-direction: column;
   padding: 20px;
   justify-content: space-around;
-  height: calc(100vh - 200px);
   background-color: rgba(255,255,255,0.8);
+  position: absolute;
+  right: 0;
+  height: 100%;
 }
