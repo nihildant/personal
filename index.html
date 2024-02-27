@@ -42,8 +42,37 @@
             });
             $("#title .wrap hgroup h2").addClass("textAni");
             $("#title .wrap hgroup h3").addClass("txtAni");
-            }
-        );
+
+            //대메뉴 클릭시 페이지 스크롤형 이동
+            $("header div.wrap ul.gnb li:nth-child(1) a").click(function(){
+                $("html,body").animate({scrollTop:"0px"},1500);
+                return false;
+            });
+            //about
+            $("header div.wrap ul.gnb li:nth-child(2) a").click(function(){
+                $("html,body").animate({scrollTop:$(window).height()},1500);
+                return false;
+            });
+            //about
+            $("header div.wrap ul.gnb li:nth-child(3) a").click(function(){
+                $("html,body").animate({scrollTop:$(window).height()*2},1500);
+                return false;
+            });
+            //about
+            $("header div.wrap ul.gnb li:nth-child(4) a").click(function(){
+                $("html,body").animate({scrollTop:$(window).height()*3},1500);
+                return false;
+            });
+
+            //top버튼
+            $("footer a.top").click(function(){
+                $("html,body").animate({scrollTop:"0px"},1500);
+                return false;
+            });
+            
+        });
+
+
     </script>
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -102,7 +131,7 @@
     <!-- 메인영역 -->
     <main class="paddingT50">
 <!-- ABOUT -->
-        <section id="about" class="paddingT50 paddingB50 marginT50  marginB50">
+        <section id="about" class="paddingT50 paddingB50 marginB50">
             <div class="wrap grid24">
                 <h2 class="h2">ABOUT</h2>
                 <img src="img/about.png" alt="포폴사진">
