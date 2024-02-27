@@ -86,12 +86,3 @@ header div.wrap div.right > a.ham {
 .mhide{
   opacity: 0;
 }
-.sideM{
-  flex-direction: column;
-  padding: 20px;
-  justify-content: space-around;
-  background-color: rgba(255,255,255,0.8);
-  position: absolute;
-  right: 0;
-  height: 100%;
-}

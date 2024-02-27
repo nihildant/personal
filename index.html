@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/contact.css">
@@ -37,7 +38,6 @@
         $(document).ready(function(){
             $("a.ham").click(function(){
                 $(this).toggleClass("x");
-                $("header div.wrap ul.gnb").toggleClass("sideM");
                 return false;
             });
             $("#title .wrap hgroup h2").addClass("textAni");
@@ -91,7 +91,7 @@
         </div>
     </header>
     <!-- 타이틀영역 -->
-    <div id="title" class="marginB50">
+    <div id="title" class="">
         <div class="wrap flex column center">
             <hgroup>
                 <h2 class="h2"><span>WELCOME </span><span>TO</span></h2>
@@ -111,29 +111,28 @@
                         디자인만을 그대로 구현한 사이트보다<br>사용자를 위한 웹사이트를 목표로<br>성장하는 퍼블리셔가 되겠습니다.
                     </span>
                 </p>
-                    <ul class="list flex between">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>jQuery</li>
-                        <li>Javascript</li>
-                        <li>젠코딩</li>
-                        <li>SASS</li>
-                        <li>웹표준</li>
-                        <li>웹접근성</li>
-                    </ul>
-                    <div class="education">
-                        <h2 class="h4">EDUCATION</h2>
-                        <p>이젠IT컴퓨터아카테미</p>
-                        <P>UI/UX 반응형 웹디자인&웹퍼블리셔 과정 수료</P>
-                        <P>2023.11 - 2024.03</P>
-                    </div>
-                    <div class="certificate">
-                        <h2 class="h4">CERTIFICATE</h2>
-                        <p>컴퓨터활용능력2급</p>
-                        <p>itq 엑셀, 한글, PPT</p>
-                        <p>fat1급</p>
-                    </div>
-                </section>
+                <ul class="list flex between">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>jQuery</li>
+                    <li>Javascript</li>
+                    <li>젠코딩</li>
+                    <li>SASS</li>
+                    <li>웹표준</li>
+                    <li>웹접근성</li>
+                </ul>
+                <div class="education">
+                    <h2 class="h4">EDUCATION</h2>
+                    <p>이젠IT컴퓨터아카테미</p>
+                    <P>UI/UX 반응형 웹디자인&웹퍼블리셔 과정 수료</P>
+                    <P>2023.11 - 2024.03</P>
+                </div>
+                <div class="certificate">
+                    <h2 class="h4">CERTIFICATE</h2>
+                    <p>컴퓨터활용능력2급</p>
+                    <p>itq 엑셀, 한글, PPT</p>
+                    <p>fat1급</p>
+                </div>
             </div>
         </section>
 <!-- PORTFOLIO -->

@@ -1,0 +1,310 @@
+main {
+  height: 300%;
+}
+section{
+  
+}
+section#about {
+   background-color: white;
+   height: 100vh;
+   position: relative;
+   box-sizing: border-box;
+   min-height: 900px;
+}
+section#about .wrap {
+   position: relative;
+   z-index: 1;
+   height: 100%;
+}
+section#about .wrap h2 {
+   grid-column: 1 /span 6;
+   text-align: center;
+}
+section#about .wrap img {
+   height: 300px;
+   grid-row: 2;
+   grid-column: 1;
+}
+section#about .wrap p {
+   margin-bottom: 10px;
+   grid-row: 3;
+}
+section#about .wrap > p {
+   font-size: 19px;
+}
+section#about .wrap span {
+   line-height: 1.5;
+}
+section#about .wrap ul {
+   gap: 40px;
+   grid-row: 2/ span 3;
+   grid-column: 2;
+   margin-top: 30px;
+}
+section#about .wrap ul li{
+   text-align: center;
+}
+section#about .wrap ul li:not(:first-child) {
+   height: 400px;
+   margin-left: 30px;
+}
+
+section#about .wrap ul li::before{
+   content: "";
+   width: 100px;
+   height: 100px;
+   display: block;
+   margin-bottom: 10px;
+   background-size: 90%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+section#about .wrap ul li:nth-child(1)::before{
+   background-image: url(../icon/html.png);
+}
+section#about .wrap ul li:nth-child(2)::before{
+   background-image: url(../icon/css.png);
+}
+section#about .wrap ul li:nth-child(3)::before{
+   background-image: url(../icon/jquery.png);
+}
+section#about .wrap ul li:nth-child(4)::before{
+   background-image: url(../icon/js.png);
+}
+section#about .wrap ul li:nth-child(5)::before{
+   background-image: url(../icon/zzc.png);
+}
+section#about .wrap ul li:nth-child(6)::before{
+   background-image: url(../icon/sass.png);
+}
+section#about .wrap ul li:nth-child(7)::before{
+   background-image: url(../icon/w3c.png);
+}
+section#about .wrap ul li:nth-child(8)::before{
+   background-image: url(../icon/webj.png);
+}
+section#about .wrap .education{
+   grid-row: 3;
+   grid-column: 3;
+}
+section#about .wrap .education h2{
+   text-align: left;
+   margin-bottom: 20px;
+}
+section#about .wrap .education p{
+
+}
+section#about .wrap .certificate{
+   grid-row: 3;
+   grid-column: 5;
+}
+section#about .wrap .certificate h2{
+   text-align: left;
+   margin-bottom: 20px;
+}
+section#about .wrap .certificate p{
+
+}
+
+section#about::after{
+   content: "";
+   width: 95%;
+   height: 45%;
+   display: block;
+   background-color: #e9e7e7;
+   border-radius: 30px 0 0 30px;
+   position: absolute;
+   right: 0;
+   bottom: 60px;
+}
+
+section#portfolio {
+   max-width: 1720px;
+   margin: 0 auto;
+   background-color: white;
+   height: 100vh;
+   box-sizing: border-box;
+   min-height: 800px;
+   position: relative;
+}
+section#portfolio::after{
+   content: "";
+   display: block;
+   border: 50px solid rgb(255, 255, 255);
+   border-left-color: transparent;
+   border-right-color: transparent;
+   border-bottom-color: transparent;
+   border-left-width: 800px;
+   border-right-width: 800px;
+   position: absolute;
+   bottom: -95px;
+   border-top-width: 50px;
+   left: 50px;
+}
+section#portfolio .wrap {
+}
+section#portfolio .wrap .pSlide .slick-list{
+
+}
+section#portfolio .wrap .pSlide .slick-dots{
+
+}
+section#portfolio .wrap h2 {
+   text-align: center;
+}
+section#portfolio .wrap >ul {
+}
+section#portfolio .wrap ul .tag{
+   flex-wrap: wrap;
+   order: 3;
+}
+section#portfolio .wrap>ul>li {
+   width: 40%;
+   height: 90%;
+}
+section#portfolio .wrap ul li a {
+   height: 100%;
+   display: flex;
+   align-items: flex-start;
+   padding: 30px;
+   box-sizing: border-box;
+   transition: box-shadow 0.5s;
+   margin-top: 30px;
+   flex-direction: column;
+   gap: 20px;
+}
+section#portfolio .wrap ul li a:hover {
+   box-shadow: 0px 0px 15px #ccc;
+}
+section#portfolio .wrap ul li a::after{
+   content: "";
+   background-repeat: no-repeat;
+   background-position: bottom;
+   background-size: cover;
+   display: inline-block;
+   width: 100%;
+   height: 300px;
+   box-sizing: border-box;
+}
+section#portfolio .wrap ul li:nth-child(1) a::after{
+   background-image: url(../img/ACCUNIQ.png);
+}
+section#portfolio .wrap ul li:nth-child(2) a::after{
+   background-image: url(../img/L.POINT.png);
+}
+section#portfolio .wrap ul li:nth-child(3) a::after{
+   background-image: url(../img/nostalgia.png);
+}
+section#portfolio .wrap ul li:nth-child(4) a::after{
+   background-image: url(../img/hbPaper.png);
+}
+section#portfolio .wrap ul li:nth-child(5) a::after{
+   background-image: url(../img/hitejinro.png);
+}
+section#portfolio .wrap ul li a h3 {
+   width: 100%;
+   padding-bottom: 20px;
+   order: 1;
+}
+section#portfolio .wrap ul li a p {
+   width: 60%;
+}
+section#portfolio .wrap .pdetail {
+   width: calc(100% / 2);
+}
+section#portfolio .wrap .pdetail article {
+   display: grid;
+   grid-template-columns: 50% calc(50% - 50px);
+   grid-template-rows: auto auto 1fr;
+   column-gap: 50px;
+   row-gap: 24px;
+}
+section#portfolio .wrap .pdetail article:not(:first-child) {
+   display: none;
+}
+section#portfolio .wrap .pdetail article hgroup {
+
+}
+section#portfolio .wrap .pdetail article hgroup h3 {
+   margin-bottom: 16px;
+}
+section#portfolio .wrap .pdetail article hgroup h4 {
+
+}
+section#portfolio .wrap .pdetail article p.h4 {
+   line-height: 1.3;
+}
+section#portfolio .wrap .pdetail article p.p {
+
+}
+section#portfolio .wrap .pdetail article img {
+   grid-row: 1 / span 3;
+   grid-column: 2;
+   width: 500px;
+}
+
+section#contact{
+   height: calc(100vh - 266px);
+}
+section#contact .wrap{  
+   height: 100%;
+   margin-top: 100px;
+}
+section#contact .wrap h2{
+   text-align: center;
+}
+section#contact .wrap ul{
+   gap: 60px;
+   justify-content: center;
+   margin-top: 5%;
+   align-items: center;
+}
+section#contact .wrap ul li{
+   
+}
+section#contact .wrap ul li a{
+   
+}
+section#contact .wrap ul li a.E-mail{
+   font-size: 0;
+   width: 150px;
+   height: 150px;
+   display: block;
+   background-image: url(../img/mail.svg);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+   transition: 0.5s;
+}
+section#contact .wrap ul li a.E-mail:hover{
+   transform: scale(1.1);
+}
+section#contact .wrap ul li a.Github{
+   font-size: 0;
+   width: 150px;
+   height: 150px;
+   display: block;
+   background-image: url(../img/github.svg);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+   transition: 0.5s;
+}
+section#contact .wrap ul li a.Github:hover{
+   transform: scale(1.1);
+}
+section#contact .wrap ul li a.Instagram{
+   font-size: 0;
+   width: 150px;
+   height: 150px;
+   display: block;
+   background-image: url(../img/instagram.svg);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+   transition: 0.5s;
+}
+section#contact .wrap ul li a.Instagram:hover{
+   transform: scale(1.1);
+}
+ 
