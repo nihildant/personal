@@ -120,12 +120,11 @@ section#about::after{
 
 section#portfolio {
    max-width: 1720px;
-   margin: 0 auto;
    background-color: white;
-   height: 100vh;
-   box-sizing: border-box;
    min-height: 800px;
    position: relative;
+   margin: 50px 100px 0 100px;
+   box-sizing: border-box;
 }
 section#portfolio::after{
    content: "";
@@ -134,14 +133,15 @@ section#portfolio::after{
    border-left-color: transparent;
    border-right-color: transparent;
    border-bottom-color: transparent;
-   border-left-width: 800px;
-   border-right-width: 800px;
+   border-left-width: 837px;
+   border-right-width: 837px;
    position: absolute;
-   bottom: -95px;
-   border-top-width: 50px;
-   left: 50px;
+   bottom: -241px;
+   border-top-width: 194px;
+   left: 14.5px;
 }
 section#portfolio .wrap {
+   box-sizing: border-box;
 }
 section#portfolio .wrap .pSlide .slick-list{
 
@@ -244,17 +244,24 @@ section#portfolio .wrap .pdetail article img {
 }
 
 section#contact{
-   height: calc(100vh - 266px);
+   padding-top: 50px;
+   box-sizing: border-box;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 section#contact .wrap{  
-   height: 100%;
-   margin-top: 100px;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
 }
 section#contact .wrap h2{
    text-align: center;
 }
 section#contact .wrap ul{
-   gap: 60px;
+   gap: 70px;
    justify-content: center;
    margin-top: 5%;
    align-items: center;
