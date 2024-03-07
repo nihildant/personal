@@ -15,8 +15,10 @@
 }
 #title .wrap hgroup {
   margin-left: 3%;
-  overflow: hidden;
   width: 100%;
+}
+#title .wrap hgroup.titlehide{
+  opacity: 0;
 }
 #title .wrap hgroup h2 {
   display: flex;
@@ -25,6 +27,7 @@
   overflow: hidden;
 }
 #title .wrap hgroup h2 span{
+  font-size: 140px;
 }
 #title .wrap hgroup h2 span:not(:first-child){
   transition-delay: 0.1s;
@@ -34,6 +37,14 @@
   opacity: 0;
   display: flex;
   gap: 20px;
+  padding-left: 10px;
+  color: rgba(0,0,0,0.7);
+}
+#title .wrap hgroup h3::after{
+  content: "";
+  display: block;
+  width: 285px;
+  border-bottom: 3px solid;
 }
 #title .wrap hgroup h3 span{
   
@@ -74,4 +85,34 @@
     transform: translateY(100px);
     opacity: 0;
   }
+}
+
+.marquee {
+  height: 24%;
+  width: 100%;
+
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  position: absolute;
+  overflow: hidden;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee span {
+  float: left;
+  font-size: 200px;
+  color: rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
 }

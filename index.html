@@ -32,16 +32,30 @@
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- 제이쿼리 -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
+            //ham 전체gnb 애니 //문제 있음 타이틀 숨김> 해제가 제대로 안됌 removeclass작동x
             $("a.ham").click(function(){
                 $(this).toggleClass("x");
+                $("header div.wrap ul.gnb").toggleClass("hamgnb");
+                $("#title .wrap hgroup").toggleClass("titlehide");
+            
+                $("header div.wrap ul.hamgnb > li a").click(function(){ 
+                    $("a.ham").removeClass("x");
+                    $("header div.wrap ul.gnb").removeClass("hamgnb");
+                    $("#title .wrap hgroup.titlehide").removeClasss("titlehide");
+                    return false;
+                });
                 return false;
             });
-            $("#title .wrap hgroup h2").addClass("textAni");
-            $("#title .wrap hgroup h3").addClass("txtAni");
+           
+
+            //타이틀 애니
+            $("#title .wrap hgroup h3").addClass("textAni");
+            $("#title .wrap hgroup h2").addClass("txtAni");
 
             //대메뉴 클릭시 페이지 스크롤형 이동
             $("header div.wrap ul.gnb li:nth-child(1) a").click(function(){
@@ -53,27 +67,55 @@
                 $("html,body").animate({scrollTop:$(window).height()},1500);
                 return false;
             });
-            //about
+            //portfolio
             $("header div.wrap ul.gnb li:nth-child(3) a").click(function(){
                 $("html,body").animate({scrollTop:$(window).height()*2},1500);
                 return false;
             });
-            //about
+            //contact
             $("header div.wrap ul.gnb li:nth-child(4) a").click(function(){
                 $("html,body").animate({scrollTop:$(window).height()*3},1500);
                 return false;
             });
             //스크롤
+            $(window).scroll(function(){
+                //contact top버튼
+                if($(window).scrollTop()>$("#title").height()+$("#about").height()+$("#portfolio").height()-200){
+                $("footer a.top").addClass("topShow");
+                }else{
+                    $("footer a.top").removeClass("topShow");
+                }
 
-            //contact top버튼
-            if($(window).scrollTop()>=$("#title").height()+$("#about").height()+$("portfolio").height()){
-            }
+                //사이드 onOff
+                if($(window).scrollTop()>$("#title").height()-300){
+                    $("header div.wrap ul.gnb").addClass("gnbSide");
+                }else{
+                    $("header div.wrap ul.gnb").removeClass("gnbSide");
+                }
+
+                //사이드 바 스크롤
+                if($(window).scrollTop()>$("#about").offset().top-$(window).height()*0.3){
+                    $("header div.wrap ul.gnb.gnbSide li:nth-child(2) a").addClass("sideCurrent");
+                    $("header div.wrap ul.gnb.gnbSide li a").not("li:nth-child(2) a").removeClass("sideCurrent");
+                }else{
+                    $("header div.wrap ul.gnb li a").removeClass("sideCurrent");
+                }
+                if($(window).scrollTop()>$("#portfolio").offset().top-$(window).height()*0.3){
+                    $("header div.wrap ul.gnb.gnbSide li:nth-child(3) a").addClass("sideCurrent");
+                    $("header div.wrap ul.gnb.gnbSide li a").not("li:nth-child(3) a").removeClass("sideCurrent");
+                }
+                if($(window).scrollTop()>$("#contact").offset().top-$(window).height()*0.3){
+                    $("header div.wrap ul.gnb.gnbSide li:nth-child(4) a").addClass("sideCurrent");
+                    $("header div.wrap ul.gnb.gnbSide li a").not("li:nth-child(4) a").removeClass("sideCurrent");
+                }
+            });
+
             //top버튼
             $("footer a.top").click(function(){
                 $("html,body").animate({scrollTop:"0px"},1500);
                 return false;
             });
-
+        
         });
 
 
@@ -90,24 +132,78 @@
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: true,
-                autoplay: true,
+                // autoplay: true,
                 autoplaySpeed: 1000,
-                speed:1000,
+                speed:2000,
                 dots:true,
                 arrows:true
             });
         });
     </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
+    <!-- 마우스 휠 -->
+    <script type="text/javascript">
+        window.onload = function () {
+            var elm = ".box";
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });
+
+            $("main>section").unwrap();
+            $("section").css("height","100%");
+        }
+    </script>
+
 </head>
 <body>
     <!-- 상단영역 -->
     <header class="paddingT50">
-        <div class="wrap flex between">
+        <div class="wrap">
             <h1>
-             <a href="">
-                LHJ
-            </a>
-        </h1>
+                <a href="">Jn'S WEB PORTFOLIO</a>
+            </h1>
             <ul class="gnb flex between">
                 <li><a href="">HOME</a></li>
                 <li><a href="">ABOUT</a></li>
@@ -127,9 +223,15 @@
     <div id="title" class="">
         <div class="wrap flex column center">
             <hgroup>
-                <h2 class="h2"><span>WELCOME </span><span>TO</span></h2>
-                <h3 class="h1"><span>LHJ'S </span><span>PORTFOLIO</span></h3>
+                <h3 class="h4"><span>Web Publisher</span><span>2024</span></h3>
+                <h2 class="h1"><span>PORTFOLIO</span></h2>
             </hgroup>
+            <div class="marquee">
+                <div>
+                  <span>LHJ PORTFOLIO Web Publisher </span>
+                  <span>Jn PORTFOLIO Web Designer</span>
+                </div>
+              </div>
         </div>
     </div>
     <!-- 메인영역 -->
@@ -137,14 +239,14 @@
 <!-- ABOUT -->
         <section id="about" class="paddingT50">
             <div class="wrap grid24">
-                <h2 class="h2">ABOUT</h2>
-                <img src="img/about.png" alt="포폴사진">
-                <p class="p">안녕하세요. 웹퍼블리셔 이혜진입니다.
+                <h2 class="h2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="10">ABOUT</h2>
+                <img src="img/about.png" alt="포폴사진" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150">
+                <p class="p" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">안녕하세요. 웹퍼블리셔 이혜진입니다.
                     <span class="block">
                         디자인만을 그대로 구현한 사이트보다<br>사용자를 위한 웹사이트를 목표로<br>성장하는 퍼블리셔가 되겠습니다.
                     </span>
                 </p>
-                <ul class="list flex between">
+                <ul class="list flex between" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
                     <li>HTML5</li>
                     <li>CSS3</li>
                     <li>jQuery</li>
@@ -153,14 +255,16 @@
                     <li>SASS</li>
                     <li>웹표준</li>
                     <li>웹접근성</li>
+                    <li>웹최적화</li>
+                    <li>Vue.js</li>
                 </ul>
-                <div class="education">
+                <div class="education" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
                     <h2 class="h4">EDUCATION</h2>
                     <p>이젠IT컴퓨터아카테미</p>
                     <P>UI/UX 반응형 웹디자인&웹퍼블리셔 과정 수료</P>
                     <P>2023.11 - 2024.03</P>
                 </div>
-                <div class="certificate">
+                <div class="certificate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
                     <h2 class="h4">CERTIFICATE</h2>
                     <p>컴퓨터활용능력2급</p>
                     <p>itq 엑셀, 한글, PPT</p>
@@ -168,82 +272,101 @@
                 </div>
             </div>
         </section>
-<!-- PORTFOLIO -->
+<!-- PORTFOLIO /레이아웃 다시 잡기 -->
         <section id="portfolio" class="paddingB50 borderR30">
             <div class="wrap between paddingT50">
-                <h2 class="h2">PORTFOLIO</h2>
-                <ul class="pSlide flex">
-                    <li>
-                        <a href="" class="block borderR30">
+                <h2 class="h2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="10">PORTFOLIO</h2>
+                <ul class="flex pSlide">
+                    <li class="po1"> 
+                        <div class="block borderR30">
                             <h3 class="h4">ACCUNIQ</h3>
+                            <img src="img/ACCUNIQ.png" alt="">
                             <ul class="tag flex">
-                                <li>#HTML5</li>
-                                <li>#CSS3</li>
-                                <li>#제작100%</li>
-                                <li>#시각적클론코딩</li>
+                                <li><span>TYPE</span>Fullpage Web</li>
+                                <li>시각적클론코딩</li>
+                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
+                                <li><span>Work</span>기여도 100%</li>
                             </ul>
-                        </a>
+                            <span>
+                                <a href="" class="more">View more</a>
+                            </span>
+                        </div>
                     </li>
-                    <li>
-                        <a href="" class="block borderR30">
+                    <li class="po2">
+                        <div class="block borderR30">
                             <h3 class="h4">L.Point</h3>
+                            <img src="img/L.POINT.png" alt="">
                             <ul class="tag flex">
-                                <li>#HTML5</li>
-                                <li>#CSS3</li>
-                                <li>#제작100%</li>
-                                <li>#시각적클론코딩</li>
+                                <li><span>TYPE</span><span>Fullpage Web</span></li>
+                                <li>시각적클론코딩</li>
+                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
+                                <li><span>Work</span>기여도 100%</li>
                             </ul>
-                        </a>
+                            <span>
+                                <a href="">View more</a>
+                            </span>
+                        </div>
                     </li>
-                    <li>
-                        <a href="" class="block borderR30">
+                    <li class="po3">
+                        <div class="block borderR30">
                             <h3 class="h4">Nostalgia</h3>
+                            <img src="img/nostalgia.png" alt="">
                             <ul class="tag flex">
-                                <li>#HTML5</li>
-                                <li>#CSS3</li>
-                                <li>#제작100%</li>
-                                <li>#시각적클론코딩</li>
+                                <li><span>TYPE</span>Fullpage Web</li>
+                                <li>시각적클론코딩</li>
+                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
+                                <li><span>Work</span>기여도 100%</li>
                             </ul>
-                        </a>
+                            <span>
+                                <a href="">View more</a>
+                            </span>
+                        </div>
                     </li>
-                    <li>
-                        <a href="" class="block borderR30">
+                    <li class="po4">
+                        <div class="block borderR30">
                             <h3 class="h4">HBpaper</h3>
+                            <img src="img/hbPaper.png" alt="">
                             <ul class="tag flex">
-                                <li>#HTML5</li>
-                                <li>#CSS3</li>
-                                <li>#제작100%</li>
-                                <li>#시각적클론코딩</li>
+                                <li><span>TYPE</span>Responsive Web</li>
+                                <li>시각적클론코딩</li>
+                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
+                                <li><span>Work</span>기여도 100%</li>
                             </ul>
-                            <!-- <a href="">리뉴얼</a> -->
-                        </a>
+                            <span>
+                                <a href="">View more</a>
+                            </span>
+                        </div>
                     </li>
-                    <li>
-                        <a href="" class="block borderR30">
+                    <li class="po5">
+                        <div class="block borderR30">
                             <h3 class="h4">HITEjinro</h3>
+                            <img src="img/hitejinro.png" alt="">
                             <ul class="tag flex">
-                                <li>#HTML5</li>
-                                <li>#CSS3</li>
-                                <li>#제작100%</li>
-                                <li>#시각적클론코딩</li>
+                                <li><span>TYPE</span>Responsive Web</li>
+                                <li>시각적클론코딩</li>
+                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
+                                <li><span>Work</span>기여도 100%</li>
                             </ul>
-                        </a>
+                            <span>
+                                <a href="">View more</a>
+                            </span>
+                        </div>
                     </li>
                 </ul>
             </div>
         </section>
 <!-- CONTECT -->
-        <section id="contact" class="">
+        <section id="contact">
             <div class="wrap">
-                <h2 class="h2">CONTACT</h2>
+                <h2 class="h2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="10">CONTACT</h2>
                 <ul class="list flex">
-                    <li>
+                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                         <a class="E-mail" href="mailto:qwst@gmail.com">E-mail</a>
                     </li>
-                    <li>
+                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <a class="Github" href="https://github.com/nihildant">Github</a>
                     </li>
-                    <li>
+                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
                         <a class="Instagram" href="https://www.instagram.com/nihil_dant/">Instagram</a>
                     </li>
         </section>
