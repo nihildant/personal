@@ -18,7 +18,7 @@
     <!-- sns에 표시될 이미지 -->
     <meta  name="og:image"  content="https://nihildant.github.io/personal/" />
 
-    <title>LHJ's 개인홈페이지::예비웹퍼블리셔</title>
+    <title>Jn'S WEB PORTFOLIO</title>
     <link rel="stylesheet" href="css/reset.css?after">
     <link rel="stylesheet" href="css/common.css">
     <!-- Pretendard 폰트 -->
@@ -115,7 +115,27 @@
                 $("html,body").animate({scrollTop:"0px"},1500);
                 return false;
             });
-        
+            
+            //포트폴리오 레이아웃
+            //pmenu
+            $("#portfolio .wrap ul.pTab li a").click(function(){
+                return false;
+            });
+            //ptext 
+            $("#portfolio .wrap ul.pList >li").each(function(){
+                $(this).children("h3,p,a").wrapAll("<div class='ptext'></div>"); 
+                $(".ptext").hide();
+            });           
+            $("#portfolio .wrap > ul li").hover(
+            function(){ //mouseenter
+                $(this).children(".ptext").stop().fadeIn();
+                $(this).children(".ptext").addClass("transY");
+                $(this).siblings().children("ptext").removeClass("transY");
+            },
+            function(){ //mouseleave
+                $(this).children(".ptext").stop().fadeOut();
+                $(this).children(".ptext").removeClass("transY");
+            });
         });
 
 
@@ -126,18 +146,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script type="text/javascript">
         $(document).ready(function(){
-            $('.pSlide').slick({
-                centerMode: true,
-                centerPadding: '60px',
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-                // autoplay: true,
-                autoplaySpeed: 1000,
-                speed:2000,
-                dots:true,
-                arrows:true
-            });
+            
         });
     </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -195,7 +204,23 @@
             $("section").css("height","100%");
         }
     </script>
+    <!-- 타이틀 영상배경 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.4/css/jquery.mb.YTPlayer.min.css">
+    <!-- <script src="//code.jquery.com/jquery-latest.min.js"></script> 제이쿼리는 하나만 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.4/jquery.mb.YTPlayer.min.js"></script>
+    <style>
+        #background {
+            z-index: -1;
+        }
+    </style>
+    <script>
+        jQuery( function() { //$는 jQuery 단축표기, $(document).ready(function(){})에서 $(document).ready...를 단축표기해서 $(function(){})
+            jQuery( '#background' ).YTPlayer();
+        });
+    </script>
+    <!-- 클립보드 복사 -->
 
+    
 </head>
 <body>
     <!-- 상단영역 -->
@@ -228,10 +253,25 @@
             </hgroup>
             <div class="marquee">
                 <div>
-                  <span>LHJ PORTFOLIO Web Publisher </span>
+                  <span>LHJ Web Publisher PORTFOLIO</span>
                   <span>Jn PORTFOLIO Web Designer</span>
                 </div>
               </div>
+        </div>
+        <!-- 유튜브 영상 -->
+        <div id="background" class="player" data-property="{
+            videoURL: 'https://youtu.be/ODozpQM_j_c',
+            mute: true,
+            showControls: false,
+            useOnMobile: true,
+            quality: 'highres',
+            containment: 'body',
+            loop: true,
+            autoPlay: true,
+            stopMovieOnBlur: false,
+            startAt: 0,
+            opacity: 1
+            }">
         </div>
     </div>
     <!-- 메인영역 -->
@@ -272,87 +312,66 @@
                 </div>
             </div>
         </section>
-<!-- PORTFOLIO /레이아웃 다시 잡기 -->
+<!-- PORTFOLIO /재편집중 -->
         <section id="portfolio" class="paddingB50 borderR30">
             <div class="wrap between paddingT50">
                 <h2 class="h2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="10">PORTFOLIO</h2>
-                <ul class="flex pSlide">
-                    <li class="po1"> 
-                        <div class="block borderR30">
-                            <h3 class="h4">ACCUNIQ</h3>
-                            <img src="img/ACCUNIQ.png" alt="">
-                            <ul class="tag flex">
-                                <li><span>TYPE</span>Fullpage Web</li>
-                                <li>시각적클론코딩</li>
-                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
-                                <li><span>Work</span>기여도 100%</li>
-                            </ul>
-                            <span>
-                                <a href="" class="more">View more</a>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="po2">
-                        <div class="block borderR30">
-                            <h3 class="h4">L.Point</h3>
-                            <img src="img/L.POINT.png" alt="">
-                            <ul class="tag flex">
-                                <li><span>TYPE</span><span>Fullpage Web</span></li>
-                                <li>시각적클론코딩</li>
-                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
-                                <li><span>Work</span>기여도 100%</li>
-                            </ul>
-                            <span>
-                                <a href="">View more</a>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="po3">
-                        <div class="block borderR30">
-                            <h3 class="h4">Nostalgia</h3>
-                            <img src="img/nostalgia.png" alt="">
-                            <ul class="tag flex">
-                                <li><span>TYPE</span>Fullpage Web</li>
-                                <li>시각적클론코딩</li>
-                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
-                                <li><span>Work</span>기여도 100%</li>
-                            </ul>
-                            <span>
-                                <a href="">View more</a>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="po4">
-                        <div class="block borderR30">
-                            <h3 class="h4">HBpaper</h3>
-                            <img src="img/hbPaper.png" alt="">
-                            <ul class="tag flex">
-                                <li><span>TYPE</span>Responsive Web</li>
-                                <li>시각적클론코딩</li>
-                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
-                                <li><span>Work</span>기여도 100%</li>
-                            </ul>
-                            <span>
-                                <a href="">View more</a>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="po5">
-                        <div class="block borderR30">
-                            <h3 class="h4">HITEjinro</h3>
-                            <img src="img/hitejinro.png" alt="">
-                            <ul class="tag flex">
-                                <li><span>TYPE</span>Responsive Web</li>
-                                <li>시각적클론코딩</li>
-                                <li><span>TooL</span>photoshop, illustrator, figma, HTML, CSS, JavaScript</li>
-                                <li><span>Work</span>기여도 100%</li>
-                            </ul>
-                            <span>
-                                <a href="">View more</a>
-                            </span>
-                        </div>
-                    </li>
+                <ul class="pTab">
+                    <li><a href="">All</a></li>
+                    <li><a href="">PC</a></li>
+                    <li><a href="">Mobile</a></li>
+                    <li><a href="">Responsive</a></li>
                 </ul>
+                <ul class="pList">
+                    <li>
+                        <img src="img/ACCUNIQ.png" alt="">
+                        <h3 class="h4">ACCUNIQ</h3>
+                        <p>Fullpage Web</p>
+                        <p>시각적클론코딩</p>
+                        <p>HTML5, CSS3, Javascript, Jquery</p>
+                        <p>개인작업 100%</p>
+                        <a href="">View more</a>
+                    </li>
+                    <li>
+                        <img src="img/L.POINT.png" alt="">
+                        <h3 class="h4">L.Point</h3>
+                        <p>Fullpage Web</p>
+                        <p>시각적클론코딩</p>
+                        <p>HTML5, CSS3, Javascript, Jquery</p>
+                        <p>개인작업 100%</p>
+                        <a href="">View more</a>
+                    </li>
+                    <li>
+                        <img src="img/nostalgia.png" alt="">
+                        <h3 class="h4">Nostalgia</h3>
+                        <p>Fullpage Web</p>
+                        <p>시각적클론코딩</p>
+                        <p>HTML5, CSS3, Javascript, Jquery</p>
+                        <p>개인작업 100%</p>
+                        <a href="">View more</a>
+                    </li>
+                    <li>
+                        <img src="img/hbPaper.png" alt="">
+                        <h3 class="h4">HBpaper</h3>
+                        <p>Responsive Web</p>
+                        <p>시각적클론코딩</p>
+                        <p>HTML5, CSS3, Javascript, Jquery</p>
+                        <p>개인작업 100%</p>
+                        <a href="">View more</a>
+                    </li>
+                    <li>
+                        <img src="img/hitejinro.png" alt="">
+                        <h3 class="h4">HITEjinro</h3>
+                        <p>Responsive Web</p>
+                        <p>시각적클론코딩</p>
+                        <p>HTML5, CSS3, Javascript, Jquery</p>
+                        <p>개인작업 100%</p>
+                        <a href="">View more</a>
+                    </li>
+
+                </ul>
+                <!-- 탭 메뉴 > 클릭했을때 해당되는 컨텐츠만 보이게...>???
+                    hover > a 링크 가림 뭔가 이상함 -->
             </div>
         </section>
 <!-- CONTECT -->
@@ -363,12 +382,14 @@
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                         <a class="E-mail" href="mailto:qwst@gmail.com">E-mail</a>
                     </li>
+                    </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <a class="Github" href="https://github.com/nihildant">Github</a>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
                         <a class="Instagram" href="https://www.instagram.com/nihil_dant/">Instagram</a>
                     </li>
+                </ul>
         </section>
     </main>
     <!-- 하단영역 -->

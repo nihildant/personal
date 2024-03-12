@@ -145,6 +145,7 @@ section#portfolio::after{
    bottom: -241px;
    border-top-width: 194px;
    left: 14.5px;
+   z-index: 1;
 }
 section#portfolio .wrap {
    box-sizing: border-box;
@@ -162,17 +163,59 @@ section#portfolio .wrap h2 {
 }
 section#portfolio .wrap >ul {
 }
+section#portfolio .wrap ul.pTab{
+   display: flex;
+   justify-content: center;
+}
+section#portfolio .wrap ul.pTab li{
+   }
+section#portfolio .wrap ul.pTab li a{
+   padding: 10px;
+   width: 120px;
+   height: 20px;
+  
+   border: 1px solid;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   }
+section#portfolio .wrap ul.pList{
+   display: grid;
+   grid-template-columns: auto auto auto;
+   grid-template-rows: 1fr 1fr;
+   padding-top: 40px;
+   grid-gap: 20px;
+}
 section#portfolio .wrap >ul li{
-   transition:0.6s; 
+   transition:0.6s;    
+   position: relative;
+}
+section#portfolio .wrap >ul li img{
+   width: 100%;
+   height: 100%;
+}
+section#portfolio .wrap >ul li:nth-child(1){
+   
+}
+section#portfolio .wrap >ul li:nth-child(2){
+   
+}
+section#portfolio .wrap >ul li:nth-child(3){
+   
+}
+section#portfolio .wrap >ul li:nth-child(4){
+   
+}
+section#portfolio .wrap >ul li:nth-child(5){
    
 }
 
-section#portfolio .wrap >ul li.slick-center{
+/* section#portfolio .wrap >ul li.slick-center{
    transform:scale(1.2);
    position:relative;
    z-index:11;   
    box-sizing: border-box;
-}
+} */
 
 section#portfolio .wrap ul div ul.tag{
    flex-wrap: wrap;
@@ -189,57 +232,50 @@ section#portfolio .wrap ul div span a{
    
 }
 
-section#portfolio .wrap>ul>li {
-}
-
 section#portfolio .wrap ul li div {
    display: grid;
-   grid-template-columns: 50% 50%;
-   grid-template-rows: auto auto auto;
-   padding: 30px;
-   box-sizing: border-box;
-   transition: box-shadow 0.5s;
-   gap: 20px;
-   width: 1200px;
+   grid-template-columns: 100%;
+   grid-template-rows: auto auto;
+}
+
+.ptext{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  background-color: rgba(0,0,0,0.7);
+}
+.ptext::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  transform: scaleY(10%);
+  transform-origin: 0 0;
+  transition: 0.5s;
+}
+.ptext.transY::before{
+  background-color: rgba(0,0,0,0.2);
+  transform: scaleY(100%) !important;
 }
 
 section#portfolio .wrap ul li div:hover {
 /*    box-shadow: 0px 0px 15px #ccc; */
 }
-/* section#portfolio .wrap ul li div::after{
-   content: "";
-   background-repeat: no-repeat;
-   background-position: bottom;
-   background-size: cover;
-   display: inline-block;
-   width: 100%;
-   height: 300px;
-   box-sizing: border-box;
-} */
 
-/* section#portfolio .wrap ul li.po1 a::after{
-   background-image: url(../img/ACCUNIQ.png);
-}
-section#portfolio .wrap ul li.po2 a::after{
-   background-image: url(../img/L.POINT.png);
-}
-section#portfolio .wrap ul li.po3 a::after{
-   background-image: url(../img/nostalgia.png);
-   box-sizing: border-box;
-}
-section#portfolio .wrap ul li.po4 a::after{
-   background-image: url(../img/hbPaper.png);
-}
-section#portfolio .wrap ul li.po5 a::after{
-   background-image: url(../img/hitejinro.png);
-} */
 
 section#portfolio .wrap ul li div h3 {
    padding-bottom: 20px;
    order: 1;
-   grid-column: 2;
    grid-row: 1;
-   font-size: 30px;
 }
 section#portfolio .wrap ul li div img{
    grid-column: 1;
@@ -253,7 +289,14 @@ section#portfolio .wrap div ul li{
    color: rgba(0,0,0,0.6);
 }
 section#portfolio .wrap ul li div p {
-   width: 60%;
+}
+section#portfolio .wrap ul li div a{
+   color: white;
+   border: 1px solid aliceblue;
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 section#portfolio .wrap .pdetail {
    width: calc(100% / 2);
@@ -289,6 +332,11 @@ section#portfolio .wrap .pdetail article img {
    width: 500px;
 }
 
+
+
+
+
+
 section#contact{
    padding-top: 50px;
    box-sizing: border-box;
@@ -302,6 +350,7 @@ section#contact .wrap{
    align-items: center;
    display: flex;
    flex-direction: column;
+   height: 100%;
 }
 section#contact .wrap h2{
    text-align: center;
