@@ -234,8 +234,9 @@ section#portfolio .wrap ul div span a{
 
 section#portfolio .wrap ul li div {
    display: grid;
-   grid-template-columns: 100%;
-   grid-template-rows: auto auto;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: auto auto auto auto;
+   z-index: 1;
 }
 
 .ptext{
@@ -261,6 +262,7 @@ section#portfolio .wrap ul li div {
   transform: scaleY(10%);
   transform-origin: 0 0;
   transition: 0.5s;
+  z-index: -1;
 }
 .ptext.transY::before{
   background-color: rgba(0,0,0,0.2);
@@ -273,9 +275,10 @@ section#portfolio .wrap ul li div:hover {
 
 
 section#portfolio .wrap ul li div h3 {
-   padding-bottom: 20px;
+   padding-bottom: 10px;
    order: 1;
    grid-row: 1;
+   grid-column: 1 / span 4;
 }
 section#portfolio .wrap ul li div img{
    grid-column: 1;
@@ -290,6 +293,14 @@ section#portfolio .wrap div ul li{
 }
 section#portfolio .wrap ul li div p {
 }
+section#portfolio .wrap ul li div p:nth-child(1){
+}
+section#portfolio .wrap ul li div p:nth-child(2){
+}
+section#portfolio .wrap ul li div p:nth-child(3){
+}
+section#portfolio .wrap ul li div p:nth-child(4){
+}
 section#portfolio .wrap ul li div a{
    color: white;
    border: 1px solid aliceblue;
@@ -297,6 +308,8 @@ section#portfolio .wrap ul li div a{
    display: flex;
    justify-content: center;
    align-items: center;
+   grid-column: 2 / span 2;
+   grid-row: 4;
 }
 section#portfolio .wrap .pdetail {
    width: calc(100% / 2);

@@ -46,7 +46,7 @@
                 $("header div.wrap ul.hamgnb > li a").click(function(){ 
                     $("a.ham").removeClass("x");
                     $("header div.wrap ul.gnb").removeClass("hamgnb");
-                    $("#title .wrap hgroup.titlehide").removeClasss("titlehide");
+                    $("#title .wrap hgroup").removeClasss("titlehide");
                     return false;
                 });
                 return false;
@@ -119,6 +119,12 @@
             //포트폴리오 레이아웃
             //pmenu
             $("#portfolio .wrap ul.pTab li a").click(function(){
+                $().addClass();
+                $().siblings().removeClass();
+
+                $().hover(function(){
+
+                });
                 return false;
             });
             //ptext 
@@ -219,10 +225,22 @@
         });
     </script>
     <!-- 클립보드 복사 -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script>
+        // $textarea
+        const myTextarea = document.getElementById("myTextarea");
     
-</head>
-<body>
+        // button 클릭 이벤트
+        document.getElementById("a.email").onclick = () => {
+          // textarea의 내용을 복사한다.
+          return false;
+        window.navigator.clipboard.writeText(myTextarea.value).then(() => {
+            // 복사가 완료되면 호출된다.
+            alert("복사완료");
+          });
+        };
+    </script>
+</html>
     <!-- 상단영역 -->
     <header class="paddingT50">
         <div class="wrap">
@@ -330,7 +348,7 @@
                         <p>시각적클론코딩</p>
                         <p>HTML5, CSS3, Javascript, Jquery</p>
                         <p>개인작업 100%</p>
-                        <a href="">View more</a>
+                        <a href="https://nihildant.github.io/ph1/" target="_blank">View more</a>
                     </li>
                     <li>
                         <img src="img/L.POINT.png" alt="">
@@ -339,7 +357,7 @@
                         <p>시각적클론코딩</p>
                         <p>HTML5, CSS3, Javascript, Jquery</p>
                         <p>개인작업 100%</p>
-                        <a href="">View more</a>
+                        <a href="https://nihildant.github.io/ph2/" target="_blank">View more</a>
                     </li>
                     <li>
                         <img src="img/nostalgia.png" alt="">
@@ -348,7 +366,7 @@
                         <p>시각적클론코딩</p>
                         <p>HTML5, CSS3, Javascript, Jquery</p>
                         <p>개인작업 100%</p>
-                        <a href="">View more</a>
+                        <a href="https://nihildant.github.io/ph5/" target="_blank">View more</a>
                     </li>
                     <li>
                         <img src="img/hbPaper.png" alt="">
@@ -357,7 +375,7 @@
                         <p>시각적클론코딩</p>
                         <p>HTML5, CSS3, Javascript, Jquery</p>
                         <p>개인작업 100%</p>
-                        <a href="">View more</a>
+                        <a href="https://nihildant.github.io/ph3/" target="_blank">View more</a>
                     </li>
                     <li>
                         <img src="img/hitejinro.png" alt="">
@@ -366,7 +384,7 @@
                         <p>시각적클론코딩</p>
                         <p>HTML5, CSS3, Javascript, Jquery</p>
                         <p>개인작업 100%</p>
-                        <a href="">View more</a>
+                        <a href="https://nihildant.github.io/ph4/" target="_blank">View more</a>
                     </li>
 
                 </ul>
@@ -380,14 +398,14 @@
                 <h2 class="h2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="10">CONTACT</h2>
                 <ul class="list flex">
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-                        <a class="E-mail" href="mailto:qwst@gmail.com">E-mail</a>
+                        <a class="E-mail" href="#link">E-mail</a>
                     </li>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
-                        <a class="Github" href="https://github.com/nihildant">Github</a>
+                        <a class="Github" href="https://github.com/nihildant" target="_blank">Github</a>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
-                        <a class="Instagram" href="https://www.instagram.com/nihil_dant/">Instagram</a>
+                        <a class="Instagram" href="https://www.instagram.com/nihil_dant/" target="_blank">Instagram</a>
                     </li>
                 </ul>
         </section>
