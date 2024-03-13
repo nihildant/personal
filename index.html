@@ -41,12 +41,12 @@
             $("a.ham").click(function(){
                 $(this).toggleClass("x");
                 $("header div.wrap ul.gnb").toggleClass("hamgnb");
-                $("#title .wrap hgroup").toggleClass("titlehide");
+                // $("#title .wrap hgroup").toggleClass("titlehide");
             
                 $("header div.wrap ul.hamgnb > li a").click(function(){ 
                     $("a.ham").removeClass("x");
                     $("header div.wrap ul.gnb").removeClass("hamgnb");
-                    $("#title .wrap hgroup").removeClasss("titlehide");
+                    // $("#title .wrap hgroup").removeClasss("titlehide");
                     return false;
                 });
                 return false;
@@ -137,6 +137,8 @@
                 $(this).children(".ptext").stop().fadeIn();
                 $(this).children(".ptext").addClass("transY");
                 $(this).siblings().children("ptext").removeClass("transY");
+                $("section#portfolio .wrap ul li div h3").slideDown;
+
             },
             function(){ //mouseleave
                 $(this).children(".ptext").stop().fadeOut();
@@ -269,12 +271,12 @@
                 <h3 class="h4"><span>Web Publisher</span><span>2024</span></h3>
                 <h2 class="h1"><span>PORTFOLIO</span></h2>
             </hgroup>
-            <div class="marquee">
+            <!-- <div class="marquee">
                 <div>
                   <span>LHJ Web Publisher PORTFOLIO</span>
                   <span>Jn PORTFOLIO Web Designer</span>
                 </div>
-              </div>
+              </div> -->
         </div>
         <!-- 유튜브 영상 -->
         <div id="background" class="player" data-property="{
@@ -316,14 +318,19 @@
                     <li>웹최적화</li>
                     <li>Vue.js</li>
                 </ul>
+                <ul class="list2 flex between" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <li>포토샵</li>
+                    <li>일러스트</li>
+                    <li>프리미어</li>
+                </ul>
                 <div class="education" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
-                    <h2 class="h4">EDUCATION</h2>
+                    <h3 class="h4">EDUCATION</h2>
                     <p>이젠IT컴퓨터아카테미</p>
                     <P>UI/UX 반응형 웹디자인&웹퍼블리셔 과정 수료</P>
                     <P>2023.11 - 2024.03</P>
                 </div>
                 <div class="certificate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
-                    <h2 class="h4">CERTIFICATE</h2>
+                    <h3 class="h4">CERTIFICATE</h2>
                     <p>컴퓨터활용능력2급</p>
                     <p>itq 엑셀, 한글, PPT</p>
                     <p>fat1급</p>
@@ -388,8 +395,7 @@
                     </li>
 
                 </ul>
-                <!-- 탭 메뉴 > 클릭했을때 해당되는 컨텐츠만 보이게...>???
-                    hover > a 링크 가림 뭔가 이상함 -->
+                <!-- 탭 메뉴 > 클릭했을때 해당되는 컨텐츠만 보이게. -->
             </div>
         </section>
 <!-- CONTECT -->
@@ -399,13 +405,22 @@
                 <ul class="list flex">
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                         <a class="E-mail" href="#link">E-mail</a>
+                        <a href="">qwst780@gmail.com</a>
                     </li>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <a class="Github" href="https://github.com/nihildant" target="_blank">Github</a>
+                        <a href="">nihildant</a>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
-                        <a class="Instagram" href="https://www.instagram.com/nihil_dant/" target="_blank">Instagram</a>
+                        <a class="Instagram" href="https://www.instagram.com/qwst7890/" target="_blank">Instagram</a>
+                        <a href="">#qwst7890</a>
+                    </li>
+                    <li>
+                        <a class="kakaoQr" href="https://open.kakao.com/o/sG1JINfg" target="_blank">
+                            <img src="/img/kakaoQr.png" alt="">
+                            <a href="">https://open.kakao.com/o/sG1JINfg</a>
+                        </a>
                     </li>
                 </ul>
         </section>
