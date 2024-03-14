@@ -111,7 +111,7 @@ section#about .wrap .education{
    grid-row: 3;
    grid-column: 3;
 }
-section#about .wrap .education h2{
+section#about .wrap .education h3{
    text-align: left;
    margin-bottom: 20px;
 }
@@ -122,7 +122,7 @@ section#about .wrap .certificate{
    grid-row: 3;
    grid-column: 5;
 }
-section#about .wrap .certificate h2{
+section#about .wrap .certificate h3{
    text-align: left;
    margin-bottom: 20px;
 }
@@ -480,20 +480,4 @@ section#contact .wrap ul li a.kakaoQr{
 section#contact .wrap ul li a.kakaoQr:hover{
    transform: scale(1.1);
    background-image: url(../img/kakaoQr.png);
-}
-
-button{
-	color:#fff;
-	background: #707070;
-	font-size: 14px;
-	border:none;
-	border-radius: 10px;
-	transition:0.3s;
-   padding: 4px;
-	position: absolute;
-	transform: translateY(20px);
-}
-button:hover{
-   color:#000;
-	background: rgba(255, 167, 0, 0.3);
 }
