@@ -1,6 +1,5 @@
 #title {
   height: 100%;
-  /*! background-color: white; */
   margin: 0 auto;
   box-shadow: 0 10px 28px #ccc;
   min-height: 600px;
@@ -9,6 +8,7 @@
   background-repeat: no-repeat;
   background-size:cover;
   position: relative;
+  background-position-y: -211px;
 }
 #title .wrap {
   height: 100%;
