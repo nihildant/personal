@@ -469,7 +469,7 @@ section#contact .wrap ul li a.Instagram:hover{
 }
 section#contact .wrap ul li a.kakaoQr{
    font-size: 0;
-   width: 150px;
+   width: 135px;
    height: 150px;
    display: block;
    background-image: url(../img/kakaoQr.png);
@@ -482,4 +482,7 @@ section#contact .wrap ul li a.kakaoQr:hover{
    transform: scale(1.1);
    background-image: url(../img/kakaoQr.png);
 }
- 
+
+#copy_text{
+   
+}

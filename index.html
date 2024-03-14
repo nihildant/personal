@@ -229,18 +229,18 @@
     <!-- 클립보드 복사 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <script>
-        // $textarea
-        const myTextarea = document.getElementById("myTextarea");
+    $(function(){
+        var clipboard = new ClipboardJS('#copy_text');
+        
+        clipboard.on('success', function(e) {
+          console.info('Text:', e.text);
+          alert("텍스트가 복사되었습니다. \nCtrl + v 를 눌러서 붙여넣기 하세요.");
+        });
     
-        // button 클릭 이벤트
-        document.getElementById("a.email").onclick = () => {
-          // textarea의 내용을 복사한다.
-          return false;
-        window.navigator.clipboard.writeText(myTextarea.value).then(() => {
-            // 복사가 완료되면 호출된다.
-            alert("복사완료");
-          });
-        };
+        clipboard.on('error', function(e) {
+          alert("Ctrl + C 를 눌러서 복사해 주세요.");
+        });
+    });
     </script>
 </html>
     <!-- 상단영역 -->
@@ -404,23 +404,21 @@
                 <h2 class="h2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="10">CONTACT</h2>
                 <ul class="list flex">
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-                        <a class="E-mail" href="#link">E-mail</a>
-                        <a href="">qwst780@gmail.com</a>
+                        <a class="E-mail" href="qwst780@gmail.com target" target="_blank">E-mail</a>
+                        <button id="copy_text" type="button" data-clipboard-text="qwst780@gmail.com">qwst780@gmail.com</button>
                     </li>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <a class="Github" href="https://github.com/nihildant" target="_blank">Github</a>
-                        <a href="">nihildant</a>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
                         <a class="Instagram" href="https://www.instagram.com/qwst7890/" target="_blank">Instagram</a>
-                        <a href="">#qwst7890</a>
                     </li>
-                    <li>
+                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
                         <a class="kakaoQr" href="https://open.kakao.com/o/sG1JINfg" target="_blank">
                             <img src="/img/kakaoQr.png" alt="">
-                            <a href="">https://open.kakao.com/o/sG1JINfg</a>
                         </a>
+                        <button id="copy_text" type="button" data-clipboard-text="https://open.kakao.com/o/sG1JINfg">링크복사</button>
                     </li>
                 </ul>
         </section>
