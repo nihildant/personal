@@ -117,17 +117,68 @@
                 return false;
             });
             
-            //포트폴리오 레이아웃
+            //포트폴리오 탭 메뉴
             //pmenu
-            $("#portfolio .wrap ul.pTab li a").click(function(){
-                $().addClass();
-                $().siblings().removeClass();
+            /* category.js */
 
-                $().hover(function(){
+            let tabList = document.querySelectorAll(".pTab li")
+            let contents = document.querySelectorAll(".openTab");
 
-                });
+            // 처음에는 전부 보이게
+            for(let i=0; i<contents.length; i++){
+            contents[i].classList.add("on"); 
+            }
+
+            /* all */
+            tabList[0].addEventListener("click", function(){
+                for(let i=0; i<contents.length; i++){
+                    if(contents[i].classList.contains("openTab")==false){
+                    contents[i].classList.remove("on");
+                    console.log("실행");
+                    }else {
+                    contents[i].classList.add("on"); 
+                    console.log("미실행");
+                    }
+                }             
                 return false;
             });
+
+            /* pTab_1 */
+            tabList[1].addEventListener("click", function(){    
+                for(let i=0; i<contents.length; i++){
+                    if(contents[i].classList.contains("pTab1")==false){
+                    contents[i].classList.remove("on");
+                    }else {
+                        contents[i].classList.add("on"); 
+                    }
+                }
+                return false;
+            });
+
+            /* pTab_2 */
+            tabList[2].addEventListener("click", function(){    
+                for(let i=0; i<contents.length; i++){
+                    if(contents[i].classList.contains("pTab2")==false){
+                    contents[i].classList.remove("on");
+                    }else {
+                        contents[i].classList.add("on"); 
+                    }
+                }
+                return false;
+            });
+
+            /* pTab_3 */
+            tabList[3].addEventListener("click", function(){    
+                for(let i=0; i<contents.length; i++){
+                    if(contents[i].classList.contains("pTab3")==false){
+                    contents[i].classList.remove("on");
+                    }else {
+                        contents[i].classList.add("on"); 
+                    }
+                }
+                return false;
+            });
+            
             //ptext 
             $("#portfolio .wrap ul.pList >li").each(function(){
                 $(this).children("h3,p,a").wrapAll("<div class='ptext'></div>"); 
@@ -243,6 +294,7 @@
         });
     });
     </script>
+
 </html>
     <!-- 상단영역 -->
     <header class="paddingT50">
@@ -343,13 +395,13 @@
             <div class="wrap between paddingT50">
                 <h2 class="h2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="10">PORTFOLIO</h2>
                 <ul class="pTab">
-                    <li><a href="">All</a></li>
-                    <li><a href="">PC</a></li>
-                    <li><a href="">Mobile</a></li>
-                    <li><a href="">Responsive</a></li>
+                    <li class="pTab_all"><a href="">All</a></li>
+                    <li class="pTab1"><a href="">PC</a></li>
+                    <li class="pTab2"><a href="">Mobile</a></li>
+                    <li class="pTab3"><a href="">Responsive</a></li>
                 </ul>
                 <ul class="pList">
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <li class="openTab pTab1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <img src="img/ACCUNIQ.png" alt="">
                         <h3 class="h4">ACCUNIQ</h3>
                         <p>Fullpage Web</p>
@@ -358,7 +410,7 @@
                         <p>개인작업 100%</p>
                         <a href="https://nihildant.github.io/ph1/" target="_blank">View more</a>
                     </li>
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <li class="openTab pTab1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                         <img src="img/L.POINT.png" alt="">
                         <h3 class="h4">L.Point</h3>
                         <p>Fullpage Web</p>
@@ -367,7 +419,7 @@
                         <p>개인작업 100%</p>
                         <a href="https://nihildant.github.io/ph2/" target="_blank">View more</a>
                     </li>
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <li class="openTab pTab1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                         <img src="img/nostalgia.png" alt="">
                         <h3 class="h4">Nostalgia</h3>
                         <p>Fullpage Web</p>
@@ -376,7 +428,7 @@
                         <p>개인작업 100%</p>
                         <a href="https://nihildant.github.io/ph5/" target="_blank">View more</a>
                     </li>
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <li class="openTab pTab2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                         <img src="img/hbPaper.png" alt="">
                         <h3 class="h4">HBpaper</h3>
                         <p>Responsive Web</p>
@@ -385,7 +437,7 @@
                         <p>개인작업 100%</p>
                         <a href="https://nihildant.github.io/ph3/" target="_blank">View more</a>
                     </li>
-                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    <li class="openTab pTab2 pTab3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                         <img src="img/hitejinro.png" alt="">
                         <h3 class="h4">HITEjinro</h3>
                         <p>Responsive Web</p>
@@ -396,7 +448,7 @@
                     </li>
 
                 </ul>
-                <!-- 탭 메뉴 > 클릭했을때 해당되는 컨텐츠만 보이게. -->
+                <!-- 탭 메뉴 > 클릭했을때 해당되는 컨텐츠만 보이게. ........... -->
             </div>
         </section>
 <!-- CONTECT -->
@@ -405,15 +457,14 @@
                 <h2 class="h2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="10">CONTACT</h2>
                 <ul class="list flex">
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-                        <a class="E-mail" href="mailto:qwst7890@gmail.com" target="_blank">E-mail</a>
-                        <button id="copy_text" type="button" class="" data-clipboard-text="qwst780@gmail.com">qwst7890@gmail.com</button>
-                    </li>
-                    </li>
-                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <a class="Github" href="https://github.com/nihildant" target="_blank">Github</a>
                     </li>
-                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <a class="Instagram" href="https://www.instagram.com/qwst7890/" target="_blank">Instagram</a>
+                    </li>
+                    <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                        <a class="E-mail" href="mailto:qwst7890@gmail.com" target="_blank">E-mail</a>
+                        <button id="copy_text" type="button" class="" data-clipboard-text="qwst780@gmail.com">qwst7890@gmail.com</button>
                     </li>
                     <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
                         <a class="kakaoQr" href="https://open.kakao.com/o/sG1JINfg" target="_blank">
