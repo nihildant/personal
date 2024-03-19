@@ -26,6 +26,7 @@
   opacity: 0;
   gap: 20px;
   overflow: hidden;
+  color: #f2c062d4;
 }
 #title .wrap hgroup h2 span{
   font-size: 140px;

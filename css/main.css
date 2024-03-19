@@ -49,6 +49,7 @@ section#about .wrap ul.list2 {
    grid-row: 3;
    grid-column: 6;
    padding: 0 20px;
+   width: 268px;
 }
 section#about .wrap ul li{
    text-align: center;
@@ -107,6 +108,10 @@ section#about .wrap ul.list2 li:nth-child(2)::before{
 section#about .wrap ul.list2 li:nth-child(3)::before{
    background-image: url(../icon/pr.png);
 }
+section#about .wrap ul.list2 li::before{
+   width: 70px;
+  height: 70px;
+}
 section#about .wrap .education{
    grid-row: 3;
    grid-column: 3;
@@ -117,6 +122,17 @@ section#about .wrap .education h3{
 }
 section#about .wrap .education p{
 
+}
+section#about .wrap .education a{
+   display: block;
+   border: 1px solid #ccc;
+   width: 150px;
+   text-align: center;
+   padding: 10px;
+   margin-top: 20px;
+   border-radius: 10px;
+   color: #585858;
+   background-color: #dedede;
 }
 section#about .wrap .certificate{
    grid-row: 3;
@@ -184,6 +200,7 @@ section#portfolio .wrap >ul {
 section#portfolio .wrap ul.pTab{
    display: flex;
    justify-content: center;
+   display: none;
 }
 section#portfolio .wrap ul.pTab li{
    }
@@ -202,11 +219,14 @@ section#portfolio .wrap ul.pList{
    grid-template-columns: auto auto auto;
    grid-template-rows: 1fr 1fr;
    padding-top: 40px;
-   grid-gap: 20px;
+   grid-gap: 50px;
+   width: 1440px;
+   margin: 0 auto;
 }
 section#portfolio .wrap >ul li{
    transition:0.6s;    
    position: relative;
+   border: 1px solid #eee;
 }
 section#portfolio .wrap >ul li img{
    width: 100%;
