@@ -17,6 +17,8 @@
 #title .wrap hgroup {
   margin-left: 3%;
   width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
 }
 #title .wrap hgroup.titlehide{
   opacity: 0;

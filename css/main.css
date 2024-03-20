@@ -132,7 +132,11 @@ section#about .wrap .education a{
    margin-top: 20px;
    border-radius: 10px;
    color: #585858;
-   background-color: #dedede;
+   background-color: #ececec;
+}
+section#about .wrap .education a:hover{
+   color:#000;
+	background: rgba(255, 167, 0, 0.3);
 }
 section#about .wrap .certificate{
    grid-row: 3;
