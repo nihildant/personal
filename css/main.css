@@ -97,7 +97,7 @@ section#about .wrap ul.list li:nth-child(9)::before{
    background-image: url(../icon/webop.png);
 }
 section#about .wrap ul.list li:nth-child(10)::before{
-   background-image: url(../icon/Vue.js.png);
+   background-image: url(../icon/vue.js.png);
 }
 section#about .wrap ul.list2 li:nth-child(1)::before{
    background-image: url(../icon/ps.png);
